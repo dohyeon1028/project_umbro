@@ -1372,13 +1372,13 @@ aside .inner .util li i {
   object-fit: cover;
 }
 #event section article .ContentsWrap {
-  width: 50%;
+  width: 100%;
   height: 100%;
-  padding: 4vw 1vw 4vw 0;
+  padding: 2vw 12vw 3vw;
 }
 #event section article .ContentsWrap .videoBox {
   width: 100%;
-  height: 20.8vw;
+  height: 25vw;
 }
 #event section article .ContentsWrap .videoBox video {
   width: 100%;
@@ -1392,7 +1392,7 @@ aside .inner .util li i {
   letter-spacing: 2px;
   text-align: center;
   color: #e4e6e9;
-  margin: 3vw 0 0.5vw 0;
+  margin: 2.5vw 0 1vw 0;
 }
 #event section article .ContentsWrap p {
   width: 100%;
