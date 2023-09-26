@@ -1,0 +1,303 @@
+#football{
+    width: 100%;
+    #frame{
+        width: 100%;
+        height: 38.5vw;
+        position: relative;
+        margin-bottom: 10vw;
+        .panel{
+            width: calc(100% * 4);
+            height: 100%;
+            position: absolute;
+            display: flex;
+            li{
+                width: 100vw;
+                height: 100%;
+            }
+        }
+        
+    }
+    section{
+        position: relative;
+        width: 80vw;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vw;
+        margin-bottom: 10vw;
+        >article{
+            width: 39vw;
+            height: 25vw;
+            position: relative;
+            cursor: pointer;
+            h3{
+                position: absolute;
+                bottom: 10%;
+                color: #000;
+                font: bold 40px/1 "Phudu";
+                opacity: 1;
+                transition: 0.5s;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            &:nth-of-type(1),
+            &:nth-of-type(3){
+                h3{
+                    left: 5%;
+                }
+            }
+            &:nth-of-type(2),
+            &:nth-of-type(4){
+                h3{
+                    right: 5%;
+                }
+            }
+            &:nth-of-type(1){
+                h3{
+                    color: #fff;
+                }
+            }
+            &:hover{
+                h3{
+                    opacity: 0;
+                }
+            }
+        }
+        .ball{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20vw;
+            height: 20vw;
+            opacity: 0;
+            transform-origin: center center;
+            transition: 2s;
+            transform: translate(-50%, -50%) rotate(0deg);
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;                
+                
+            }
+            &.on{
+                opacity: 1;
+                transform: translate(-50%, -50%) rotate(360deg) scale(0.5);
+            }
+        }
+    }
+    .custom_zone{
+        width: 80vw;
+        min-height: 50vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+
+        figure{
+            width: 39.5vw;
+            height: 37.20558086560366vw;
+            border: 1px solid #000;
+            overflow: hidden;
+            position: relative;
+            img {
+                display: block;
+                width: 36.5vw;
+                height: 22.4vw;
+                margin: 2vw auto 0;
+                object-fit: cover;
+            }
+    
+            .con{
+                width: 90%;
+                margin: 1vw auto 0;
+                h2{
+                    font: bold 3vw/1 "Phudu";
+                    letter-spacing: 1px;
+                    margin-bottom: 0.5vw;
+                    width: 100%;
+                }
+    
+                p{
+                    font: bold 1.5vw/1 "Phudu";
+                    letter-spacing: 1px;
+                    margin-bottom: 1vw;
+                }
+    
+                a{
+                    display: block;
+                    width: 20vw;
+                    height: 3vw;
+                    font: bold 1.5vw/3vw "Phudu";
+                    text-align: center;
+                    background-color: #000;
+                    border: 1px solid #000;
+                    color: #fff;
+                    cursor: pointer;
+                    &:hover{
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+        
+        }
+
+        .vidList {
+            width: 39.5vw;
+            height: 37.20558086560366vw;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+
+            .video_frame{
+                width: 400%;
+                height: 100%;
+                position: absolute;
+                left: 0%;
+                
+                article {
+                    position: absolute;
+                    width: 25%;
+                    height: 100%;
+                    transition: 1s;
+                    .bg{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        z-index: -1;
+                    }
+                    
+                    .pic{
+                        display: block;
+                        margin: 4vw auto 0;
+                        width: 36.5vw;
+                        height: 20vw;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            border-radius: 15px;
+                        }
+                    }
+            
+                    .con{
+                        width: 36.5vw;
+                        margin: 1.5vw auto 0;
+                        h2{
+                            font: bold 3vw/1 "Phudu";
+                            letter-spacing: 1px;
+                            margin-bottom: 0.5vw;
+                            width: 100%;
+                        }
+            
+                        p{
+                            font: bold 1.5vw/1 "Phudu";
+                            letter-spacing: 1px;
+                            margin-bottom: 1vw;
+                        }
+            
+                        a{
+                            display: block;
+                            width: 20vw;
+                            height: 3vw;
+                            font: bold 1.5vw/3vw "Phudu";
+                            text-align: center;
+                            background-color: #000;
+                            border: 1px solid #000;
+                            color: #fff;
+                            cursor: pointer;
+                            &:hover{
+                                background-color: #fff;
+                                color: #000;
+                            }
+                        }
+                    }
+                }
+            }
+            .pop{
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0; left: 0;
+                background-color: rgba(0, 0, 0, 0.8);
+                overflow: hidden;
+                padding: 10vh 10vw;
+        
+                .btnClose{
+                    position: absolute;
+                    top: 2vw;
+                    right: 5vw;
+                    display: block;
+                    width: 2vw;
+                    height: 2vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    img{
+                        margin-top: 0px;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 450px) {
+    #football{
+        .custom_zone{
+            width: 80vw;
+            min-height: 50vw;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+    
+            figure{
+                .con{
+                    width: 90%;
+                    margin: auto atuo;
+                    a{
+                        display: none;
+                    }
+                }
+            
+            }
+    
+            .vidList {
+                .video_frame{
+                    article {
+                        .pic{
+                            display: block;
+                            margin: 4vw auto 0;
+                            width: 36.5vw;
+                            height: 20vw;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                border-radius: 15px;
+                            }
+                        }
+                        .con{
+                            margin: 1vw auto 0;
+                        }
+                    }
+                }
+                .pop{
+                    padding: 21vh 0vw;
+                    .btnClose{
+                        width: 6vw;
+                        height: 6vw;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1861 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Phudu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.headerBox {
+  width: 100%;
+  height: 6vw;
+}
+
+header {
+  width: 100vw;
+  height: 6vw;
+  display: flex;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: #fff;
+  transition: 0.5s 0.2s;
+  border-bottom: 1px solid #aaa;
+  overflow: hidden;
+}
+header h1 {
+  width: 15vw;
+  height: 75%;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+header h1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+}
+header #gnb {
+  display: flex;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+header #gnb li {
+  width: 10vw;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header #gnb li a {
+  font: bold 1.2vw/1 "Phudu";
+  letter-spacing: 1px;
+  position: relative;
+}
+header #gnb li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  opacity: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 0%;
+  transition: 0.5s;
+}
+header #gnb li a:hover::after {
+  width: 100%;
+  opacity: 1;
+  background-color: #333;
+}
+header .util {
+  width: 20vw;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  right: 3vw;
+  transform: translateY(-50%);
+}
+header .util li {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .util li a {
+  transform: scale(0.9);
+  font: 0.8vw/1 "Nanum Gothic";
+}
+header .util li a:first-child {
+  font-weight: bold;
+}
+header .bars {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+}
+header .bars .fa-bars {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+aside {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: -200%;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row-reverse;
+  transition: 1s, transform 0.2s, opacity 0.1s;
+  opacity: 0;
+  transform: scale(0);
+}
+aside.on {
+  transform: scale(1);
+  right: 0%;
+  opacity: 1;
+}
+aside .inner {
+  width: 85%;
+  height: 100%;
+  background-color: #ddd;
+  position: relative;
+}
+aside .inner .close {
+  width: 15%;
+  height: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: -16%;
+}
+aside .inner .close .fa-x {
+  font-size: 10vw;
+}
+aside .inner #gnb {
+  width: 80%;
+  padding: 10px 0;
+  position: absolute;
+  top: 100px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+aside .inner #gnb li {
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid #aaa;
+}
+aside .inner #gnb li a {
+  font: bold 18px/1 "Phudu";
+}
+aside .inner .util {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-left: 40px;
+}
+aside .inner .util li {
+  color: #eee;
+}
+aside .inner .util li a {
+  font: 16px/1 "Phudu";
+  letter-spacing: -1px;
+  color: #eee;
+}
+aside .inner .util li i {
+  display: none;
+}
+
+@media screen and (max-width: 450px) {
+  .headerBox {
+    height: 0px;
+  }
+  .headerBox.on {
+    height: 0px;
+  }
+  header {
+    width: 100vw;
+    height: 70px;
+    position: relative;
+  }
+  header h1 {
+    width: 200px;
+    height: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  header h1 img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  header #gnb {
+    display: none;
+  }
+  header .util {
+    display: none;
+  }
+  header .bars {
+    display: block;
+  }
+}
+#frame {
+  position: relative;
+  width: 100vw;
+  height: 56.25vw;
+  overflow: hidden;
+  margin-bottom: 10vh;
+}
+#frame .panel {
+  height: 100%;
+  position: absolute;
+  display: flex;
+  left: -100vw;
+  cursor: pointer;
+}
+#frame .panel li {
+  width: 100vw;
+  height: 100%;
+}
+#frame .panel li img {
+  width: 100%;
+  height: 100%;
+}
+
+#banner {
+  width: 80vw;
+  margin: 0 auto;
+  cursor: pointer;
+}
+#banner .imgBox {
+  width: 100%;
+  height: 6.5vw;
+}
+#banner .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#banner .item_wrap {
+  width: 100%;
+  display: flex;
+}
+#banner .item_wrap .videoBox {
+  width: 49.3vw;
+  height: 30vw;
+}
+#banner .item_wrap .videoBox video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#banner .item_wrap .imgBox {
+  width: 30.7vw;
+  height: 30vw;
+  overflow: hidden;
+  position: relative;
+}
+#banner .item_wrap .imgBox .banner_slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s;
+}
+#banner .item_wrap .imgBox .banner_slide li {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#banner .item_wrap .imgBox .banner_slide li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#banner .item_wrap .imgBox .btns {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+#banner .item_wrap .imgBox .btns li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 0.5px solid #999;
+}
+#banner .item_wrap .imgBox .btns li.on {
+  background-color: #000;
+  border: none;
+}
+
+#recommend {
+  width: 80vw;
+  height: 25.7vw;
+  margin: 8vh auto 5vh;
+  position: relative;
+}
+#recommend::before {
+  content: "";
+  position: absolute;
+  top: 1vw;
+  left: 0;
+  width: 80vw;
+  height: 2px;
+  background-color: #000;
+  z-index: -1;
+}
+#recommend h1 {
+  display: block;
+  width: 40vw;
+  height: 2vw;
+  margin: 0 auto;
+  background-color: #fff;
+  font: bold 1.6vw/1 "Phudu";
+  letter-spacing: 1px;
+  text-align: center;
+}
+#recommend .items_wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 6vw;
+  overflow: hidden;
+}
+#recommend .items_wrap li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#recommend .items_wrap li:nth-of-type(1) {
+  position: absolute;
+  left: -110vw;
+}
+#recommend .items_wrap li:nth-of-type(2) {
+  position: absolute;
+  left: 0vw;
+}
+#recommend .items_wrap li:nth-of-type(3) {
+  position: absolute;
+  left: 110vw;
+}
+#recommend .items_wrap li article {
+  width: 14vw;
+  height: 22vw;
+  cursor: pointer;
+}
+#recommend .items_wrap li article img {
+  width: 100%;
+  height: 14vw;
+  object-fit: cover;
+}
+#recommend .items_wrap li article:hover .txt p {
+  opacity: 1;
+  transform: translateY(0px);
+}
+#recommend .items_wrap li article .txt {
+  width: 100%;
+  height: 4vw;
+  padding: 0 5px;
+}
+#recommend .items_wrap li article .txt p {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(-25px);
+  transition: 0.5s;
+}
+#recommend .items_wrap li article .txt p.brand {
+  font: 1.2vw/1 "Phudu";
+  color: #999;
+  margin-top: 1vh;
+}
+#recommend .items_wrap li article .txt p.prod_title {
+  font: 1vw/1 "Phudu";
+  color: #999;
+  margin-top: 1vh;
+}
+#recommend .items_wrap li article .txt p.prod_price {
+  font: bold 1.1vw/1 "Phudu";
+  color: #000;
+  margin-top: 0.5vh;
+}
+#recommend .prev {
+  position: absolute;
+  top: 12vw;
+  left: -2vw;
+}
+#recommend .prev i {
+  font-size: 2vw;
+}
+#recommend .next {
+  position: absolute;
+  top: 12vw;
+  right: -2vw;
+}
+#recommend .next i {
+  font-size: 2vw;
+}
+
+#full_banner {
+  width: 100%;
+  overflow: hidden;
+}
+#full_banner section {
+  width: 80vw;
+  height: 50vw;
+  margin: 0 auto;
+  position: relative;
+  transition: 0.5s;
+  overflow: hidden;
+}
+#full_banner section .imgBox {
+  width: 100%;
+  height: 33.3vw;
+  margin-bottom: 3vh;
+}
+#full_banner section .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+#full_banner section .txtBox {
+  margin: 0 auto;
+}
+#full_banner section .txtBox > h1 {
+  font: bold 3vw/1 "Phudu";
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 1vw;
+}
+#full_banner section .txtBox h2 {
+  font: 1.5vw/1 "Phudu";
+  text-align: center;
+  letter-spacing: -2px;
+  color: #222;
+  margin-bottom: 2vw;
+}
+#full_banner section a {
+  margin: 0 auto;
+  width: 13vw;
+  height: 3vw;
+  padding: 0 9px;
+  background-color: #fff;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font: 1vw/1 "맑은 고딕";
+  letter-spacing: -1px;
+  color: #000;
+}
+#full_banner section a:hover {
+  background-color: #000;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    -ms-overflow-style: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  #frame {
+    margin-bottom: 2vh;
+  }
+  #banner {
+    width: 100%;
+    background-color: #eee;
+    padding: 10px 0;
+  }
+  #banner .imgBox {
+    height: 9vw;
+  }
+  #banner .item_wrap {
+    display: block;
+  }
+  #banner .item_wrap .videoBox {
+    width: 90vw;
+    height: 60vw;
+    margin: 20px auto;
+  }
+  #banner .item_wrap .imgBox {
+    width: 90vw;
+    height: 20vw;
+    margin: 0 auto;
+    overflow: visible;
+    position: static;
+  }
+  #banner .item_wrap .imgBox .banner_slide {
+    position: static;
+    display: flex;
+    justify-content: space-between;
+  }
+  #banner .item_wrap .imgBox .banner_slide li {
+    position: static;
+    width: 24%;
+  }
+  #banner .item_wrap .imgBox .btns {
+    display: none;
+  }
+  #recommend {
+    width: 90vw;
+    height: 48vw;
+    margin: 80px auto 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  #recommend::before {
+    width: 90vw;
+    top: 5px;
+  }
+  #recommend h1 {
+    width: fit-content;
+    padding: 0 10px;
+    margin: 0 auto 10px;
+    font: bold 3.5vw/1 "Phudu";
+  }
+  #recommend .items_wrap {
+    width: 375%;
+    position: static;
+    top: 50px;
+    overflow: hidden;
+  }
+  #recommend .items_wrap::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  #recommend .items_wrap li {
+    width: 22.5vw;
+    padding: 2vw 1vw;
+    display: block;
+    float: left;
+  }
+  #recommend .items_wrap li img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+  }
+  #recommend .items_wrap li .txt {
+    width: 100%;
+    height: 12vw;
+    padding: 0 0px;
+    position: relative;
+  }
+  #recommend .items_wrap li .txt p {
+    width: 100%;
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  #recommend .items_wrap li .txt p.brand {
+    font: 1vw/1 "Phudu";
+    color: #777;
+    margin-top: 1vw;
+  }
+  #recommend .items_wrap li .txt p.prod_title {
+    width: 125%;
+    font: 1vw/1 "Nanum Gothic";
+    color: #999;
+    margin-top: 1vw;
+    transform-origin: top left;
+    transform: scale(0.8);
+  }
+  #recommend .items_wrap li .txt p.prod_price {
+    font: bold 1.2vw/1 "Phudu";
+    color: #000;
+    position: absolute;
+    bottom: -1vw;
+    text-align: right;
+  }
+  #recommend .items_wrap li:nth-of-type(1) {
+    position: static;
+    left: unset;
+  }
+  #recommend .items_wrap li:nth-of-type(2) {
+    position: static;
+    left: unset;
+  }
+  #recommend .items_wrap li:nth-of-type(3) {
+    position: static;
+    left: unset;
+  }
+  #recommend .prev {
+    top: 48%;
+    width: 18.75px;
+    height: 30px;
+    left: -20px;
+  }
+  #recommend .prev i {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  #recommend .next {
+    top: 48%;
+    width: 18.75px;
+    height: 30px;
+    right: -20px;
+  }
+  #recommend .next i {
+    font-size: 30px;
+    color: rgba(0, 0, 0, 0.7);
+  }
+  #full_banner {
+    width: 90vw;
+    margin: 2vh auto;
+    position: relative;
+  }
+  #full_banner > h1 {
+    display: block;
+    width: fit-content;
+    background-color: #fff;
+    font: bold 30px/1 "Phudu";
+    text-align: center;
+    margin: 20px auto 60px;
+    padding: 0 20px;
+  }
+  #full_banner > h1::before {
+    content: "";
+    display: block;
+    width: 90vw;
+    height: 2px;
+    position: absolute;
+    top: 36px;
+    z-index: -1;
+    left: 0;
+    background-color: #000;
+  }
+  #full_banner section {
+    padding: 0 10px;
+    width: 45vw;
+    height: 37vw;
+    margin: 0 0 30px 0;
+    float: left;
+    overflow: initial;
+  }
+  #full_banner section .imgBox {
+    height: 19vw;
+    margin-bottom: 10px;
+  }
+  #full_banner section .txtBox h1 {
+    font: bold 3vw/1 "Phudu";
+    margin-bottom: 8px;
+    padding: 0 1vw;
+  }
+  #full_banner section .txtBox h2 {
+    font: 2vw/1.2 "Phudu";
+    letter-spacing: -1px;
+  }
+  #full_banner section a {
+    display: none;
+  }
+}
+.NEW_prod_wrap {
+  width: 100vw;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 450px;
+  padding: 4vh 2vw 4vh;
+  margin: 0 auto;
+  display: flex;
+}
+.NEW_prod_wrap .filter_wrap {
+  width: 10vw;
+  padding: 2vh 2vw 0 0;
+}
+.NEW_prod_wrap .filter_wrap > div {
+  width: 100%;
+  height: 15vh;
+  border-bottom: 2px solid #aaa;
+  margin-bottom: 20px;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_tit {
+  width: 100%;
+  font: bold 1.2vw/1 "Phudu";
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_tit .close {
+  font-size: 1.2vw;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vh;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_sublist label {
+  width: 100%;
+  margin-bottom: 0.3vh;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_sublist label:hover span {
+  color: #111;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_sublist label input {
+  width: 0.7vw;
+  height: 0.7vw;
+}
+.NEW_prod_wrap .filter_wrap > div .filter_sublist label span {
+  font: 0.8vw/1 "arial";
+  color: #aaa;
+}
+@media screen and (max-width: 450px) {
+  .NEW_prod_wrap .filter_wrap {
+    display: none;
+  }
+}
+.NEW_prod_wrap .list_control_wrap {
+  width: 88vw;
+}
+.NEW_prod_wrap .list_control_wrap h2 {
+  font: bold 2vw/7vh "Phudu";
+  height: 7vh;
+  letter-spacing: 1px;
+}
+.NEW_prod_wrap .list_control_wrap h2 span {
+  color: #aaa;
+}
+.NEW_prod_wrap .list_control_wrap section {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.NEW_prod_wrap .list_control_wrap section article {
+  width: 21vw;
+  height: 38.4vw;
+}
+.NEW_prod_wrap .list_control_wrap section article .imgBox {
+  width: 100%;
+  height: 28.5vw;
+  background-color: #e4e6e9;
+  overflow: hidden;
+  position: relative;
+}
+.NEW_prod_wrap .list_control_wrap section article .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: absolute;
+  transition: 0.5s;
+}
+.NEW_prod_wrap .list_control_wrap section article .imgBox img.before {
+  opacity: 1;
+}
+.NEW_prod_wrap .list_control_wrap section article .imgBox img.after {
+  opacity: 0;
+}
+.NEW_prod_wrap .list_control_wrap section article figcaption {
+  padding: 13px 15px 0;
+  position: relative;
+}
+.NEW_prod_wrap .list_control_wrap section article figcaption a {
+  font: 14px/1 "Phudu";
+  color: #999;
+}
+.NEW_prod_wrap .list_control_wrap section article figcaption p {
+  font: bold 14px/1 "Phudu";
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 450px) {
+  .NEW_prod_wrap {
+    padding-bottom: 100px;
+    padding: 2vw 3vh;
+  }
+  .NEW_prod_wrap .list_control_wrap {
+    width: 100%;
+  }
+  .NEW_prod_wrap .list_control_wrap h2 {
+    font: bold 5vw/10vh "Phudu";
+    text-align: center;
+    height: 10vh;
+    margin-bottom: 3vh;
+  }
+  .NEW_prod_wrap .list_control_wrap section {
+    width: 100%;
+  }
+  .NEW_prod_wrap .list_control_wrap section article {
+    width: calc(33.3333333333% - 10px);
+    height: calc(33.3333333333vw + 15vh);
+  }
+  .NEW_prod_wrap .list_control_wrap section article .imgBox {
+    width: 100%;
+    height: calc(33.3333333333vw - 10px);
+  }
+  .NEW_prod_wrap .list_control_wrap section article .imgBox img.before {
+    opacity: 1;
+  }
+  .NEW_prod_wrap .list_control_wrap section article .imgBox img.after {
+    opacity: 0;
+  }
+  .NEW_prod_wrap .list_control_wrap section article figcaption {
+    padding: 0.5vh 0.5vw 0;
+    height: 12vh;
+    position: relative;
+  }
+  .NEW_prod_wrap .list_control_wrap section article figcaption a {
+    height: 8vw;
+    position: absolute;
+    top: 1vh;
+    font-size: 0.6em;
+    color: #999;
+  }
+  .NEW_prod_wrap .list_control_wrap section article figcaption p {
+    font: bold 1.2vw/1 "Phudu";
+    position: absolute;
+    bottom: 0vw;
+    right: 0;
+  }
+}
+.BEST_prod_wrap {
+  width: 100vw;
+  padding: 4vh 2vw 4vh;
+  margin: 0 auto;
+  display: flex;
+}
+.BEST_prod_wrap .filter_wrap {
+  width: 10vw;
+  padding: 2vh 2vw 0 0;
+}
+.BEST_prod_wrap .filter_wrap > div {
+  width: 100%;
+  height: 15vh;
+  border-bottom: 2px solid #aaa;
+  margin-bottom: 20px;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_tit {
+  width: 100%;
+  font: bold 1.2vw/1 "Phudu";
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5vh;
+  display: flex;
+  justify-content: space-between;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_tit .close {
+  font-size: 1.2vw;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3vh;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_sublist label {
+  width: 100%;
+  margin-bottom: 0.3vh;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_sublist label:hover span {
+  color: #111;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_sublist label input {
+  width: 0.7vw;
+  height: 0.7vw;
+}
+.BEST_prod_wrap .filter_wrap > div .filter_sublist label span {
+  font: 0.8vw/1 "arial";
+  color: #aaa;
+}
+@media screen and (max-width: 450px) {
+  .BEST_prod_wrap .filter_wrap {
+    display: none;
+  }
+}
+.BEST_prod_wrap .list_control_wrap {
+  width: 88vw;
+}
+.BEST_prod_wrap .list_control_wrap h2 {
+  font: bold 2vw/1 "Phudu";
+  display: flex;
+  align-items: center;
+  height: 7vh;
+  letter-spacing: 1px;
+}
+.BEST_prod_wrap .list_control_wrap h2 span {
+  font: bold 1.5vw/1 "Phudu";
+  color: #aaa;
+  margin-left: 1vw;
+}
+.BEST_prod_wrap .list_control_wrap section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 1;
+  gap: 0.5vw;
+}
+.BEST_prod_wrap .list_control_wrap section article {
+  width: 21vw;
+  height: 38.4vw;
+  position: relative;
+  opacity: 1;
+  transition-duration: 0.5s;
+}
+.BEST_prod_wrap .list_control_wrap section article .imgBox {
+  width: 100%;
+  height: 28.5vw;
+  background-color: #e4e6e9;
+}
+.BEST_prod_wrap .list_control_wrap section article .imgBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.BEST_prod_wrap .list_control_wrap section article figcaption {
+  padding: 13px 15px 0;
+}
+.BEST_prod_wrap .list_control_wrap section article figcaption a {
+  font: 14px/1 "Phudu";
+  color: #999;
+}
+.BEST_prod_wrap .list_control_wrap section article figcaption p {
+  font: bold 14px/1 "Phudu";
+  margin-top: 10px;
+}
+.BEST_prod_wrap .list_control_wrap section article .rank {
+  position: absolute;
+  width: 2vw;
+  height: 2vw;
+  clip-path: circle(50% at 50% 50%);
+  background-color: #777;
+  left: 20px;
+  top: 10px;
+  font: lighter 0.8vw/1 "Phudu";
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  opacity: 1;
+  overflow: hidden;
+}
+.BEST_prod_wrap .list_control_wrap section article:hover .rank {
+  opacity: 0;
+  clip-path: circle(0 at 50% 50%);
+  font-size: 1px;
+}
+
+@media screen and (max-width: 450px) {
+  .BEST_prod_wrap {
+    padding: 5vh 2vw 20vh;
+    display: block;
+  }
+  .BEST_prod_wrap .list_control_wrap {
+    width: 100%;
+  }
+  .BEST_prod_wrap .list_control_wrap h2 {
+    font: bold 4vw/1 "Phudu";
+    margin-bottom: 5vh;
+    justify-content: center;
+  }
+  .BEST_prod_wrap .list_control_wrap h2 span {
+    font: bold 3vw/100px "Phudu";
+  }
+  .BEST_prod_wrap .list_control_wrap section {
+    justify-content: space-between;
+  }
+  .BEST_prod_wrap .list_control_wrap section article {
+    height: 40vw;
+  }
+  .BEST_prod_wrap .list_control_wrap section article .imgBox {
+    height: 29vw;
+  }
+  .BEST_prod_wrap .list_control_wrap section article figcaption {
+    width: 125%;
+    height: 10vw;
+    padding: 0;
+    position: relative;
+    margin-top: 1vw;
+    transform-origin: top left;
+    transform: scale(0.8);
+  }
+  .BEST_prod_wrap .list_control_wrap section article figcaption a {
+    position: absolute;
+    top: 0;
+    font: 10px/1 "Phudu";
+  }
+  .BEST_prod_wrap .list_control_wrap section article figcaption p {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font: bold 11px/1 "Phudu";
+    margin-top: 0px;
+  }
+  .BEST_prod_wrap .list_control_wrap section article .rank {
+    width: 4vw;
+    height: 4vw;
+    left: 1vw;
+    top: 1vw;
+  }
+}
+#football {
+  width: 100%;
+}
+#football #frame {
+  width: 100%;
+  height: 38.5vw;
+  position: relative;
+  margin-bottom: 10vw;
+}
+#football #frame .panel {
+  width: 400%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+}
+#football #frame .panel li {
+  width: 100vw;
+  height: 100%;
+}
+#football section {
+  position: relative;
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vw;
+  margin-bottom: 10vw;
+}
+#football section > article {
+  width: 39vw;
+  height: 25vw;
+  position: relative;
+  cursor: pointer;
+}
+#football section > article h3 {
+  position: absolute;
+  bottom: 10%;
+  color: #000;
+  font: bold 40px/1 "Phudu";
+  opacity: 1;
+  transition: 0.5s;
+}
+#football section > article img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#football section > article:nth-of-type(1) h3, #football section > article:nth-of-type(3) h3 {
+  left: 5%;
+}
+#football section > article:nth-of-type(2) h3, #football section > article:nth-of-type(4) h3 {
+  right: 5%;
+}
+#football section > article:nth-of-type(1) h3 {
+  color: #fff;
+}
+#football section > article:hover h3 {
+  opacity: 0;
+}
+#football section .ball {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20vw;
+  height: 20vw;
+  opacity: 0;
+  transform-origin: center center;
+  transition: 2s;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+#football section .ball img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#football section .ball.on {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(360deg) scale(0.5);
+}
+#football .custom_zone {
+  width: 80vw;
+  min-height: 50vw;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#football .custom_zone figure {
+  width: 39.5vw;
+  height: 37.2055808656vw;
+  border: 1px solid #000;
+  overflow: hidden;
+  position: relative;
+}
+#football .custom_zone figure img {
+  display: block;
+  width: 36.5vw;
+  height: 22.4vw;
+  margin: 2vw auto 0;
+  object-fit: cover;
+}
+#football .custom_zone figure .con {
+  width: 90%;
+  margin: 1vw auto 0;
+}
+#football .custom_zone figure .con h2 {
+  font: bold 3vw/1 "Phudu";
+  letter-spacing: 1px;
+  margin-bottom: 0.5vw;
+  width: 100%;
+}
+#football .custom_zone figure .con p {
+  font: bold 1.5vw/1 "Phudu";
+  letter-spacing: 1px;
+  margin-bottom: 1vw;
+}
+#football .custom_zone figure .con a {
+  display: block;
+  width: 20vw;
+  height: 3vw;
+  font: bold 1.5vw/3vw "Phudu";
+  text-align: center;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  cursor: pointer;
+}
+#football .custom_zone figure .con a:hover {
+  background-color: #fff;
+  color: #000;
+}
+#football .custom_zone .vidList {
+  width: 39.5vw;
+  height: 37.2055808656vw;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+#football .custom_zone .vidList .video_frame {
+  width: 400%;
+  height: 100%;
+  position: absolute;
+  left: 0%;
+}
+#football .custom_zone .vidList .video_frame article {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  transition: 1s;
+}
+#football .custom_zone .vidList .video_frame article .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+#football .custom_zone .vidList .video_frame article .pic {
+  display: block;
+  margin: 4vw auto 0;
+  width: 36.5vw;
+  height: 20vw;
+}
+#football .custom_zone .vidList .video_frame article .pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+#football .custom_zone .vidList .video_frame article .con {
+  width: 36.5vw;
+  margin: 1.5vw auto 0;
+}
+#football .custom_zone .vidList .video_frame article .con h2 {
+  font: bold 3vw/1 "Phudu";
+  letter-spacing: 1px;
+  margin-bottom: 0.5vw;
+  width: 100%;
+}
+#football .custom_zone .vidList .video_frame article .con p {
+  font: bold 1.5vw/1 "Phudu";
+  letter-spacing: 1px;
+  margin-bottom: 1vw;
+}
+#football .custom_zone .vidList .video_frame article .con a {
+  display: block;
+  width: 20vw;
+  height: 3vw;
+  font: bold 1.5vw/3vw "Phudu";
+  text-align: center;
+  background-color: #000;
+  border: 1px solid #000;
+  color: #fff;
+  cursor: pointer;
+}
+#football .custom_zone .vidList .video_frame article .con a:hover {
+  background-color: #fff;
+  color: #000;
+}
+#football .custom_zone .vidList .pop {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  padding: 10vh 10vw;
+}
+#football .custom_zone .vidList .pop .btnClose {
+  position: absolute;
+  top: 2vw;
+  right: 5vw;
+  display: block;
+  width: 2vw;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+#football .custom_zone .vidList .pop .btnClose img {
+  margin-top: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 450px) {
+  #football .custom_zone {
+    width: 80vw;
+    min-height: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  #football .custom_zone figure .con {
+    width: 90%;
+    margin: auto atuo;
+  }
+  #football .custom_zone figure .con a {
+    display: none;
+  }
+  #football .custom_zone .vidList .video_frame article .pic {
+    display: block;
+    margin: 4vw auto 0;
+    width: 36.5vw;
+    height: 20vw;
+  }
+  #football .custom_zone .vidList .video_frame article .pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+  #football .custom_zone .vidList .video_frame article .con {
+    margin: 1vw auto 0;
+  }
+  #football .custom_zone .vidList .pop {
+    padding: 21vh 0vw;
+  }
+  #football .custom_zone .vidList .pop .btnClose {
+    width: 6vw;
+    height: 6vw;
+  }
+}
+#event {
+  width: 80vw;
+  margin: 1vw auto 8vw;
+}
+#event h1 {
+  display: block;
+  font: bold 3vw/15vh "Phudu";
+  width: 100%;
+  height: 15vh;
+  text-align: center;
+}
+#event .btns {
+  width: 100%;
+  display: flex;
+}
+#event .btns li {
+  width: 20vw;
+  height: 3vw;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 1.2vw/1 "Phudu";
+  cursor: pointer;
+}
+#event .btns li:hover {
+  background-color: #aaa;
+  color: #000;
+}
+#event .btns li.on {
+  background-color: #000;
+  color: #fff;
+}
+#event section {
+  margin-top: 2vh;
+}
+#event section article {
+  width: 100%;
+  height: 38.88vw;
+  padding: 1vw 1vw;
+  display: none;
+  border: 1px solid #000;
+  position: relative;
+}
+#event section article.on {
+  display: block;
+}
+#event section article .bgImgBox {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: #333;
+}
+#event section article .bgImgBox img {
+  position: absolute;
+  opacity: 0.15;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#event section article .ContentsWrap {
+  width: 50%;
+  height: 100%;
+  padding: 4vw 1vw 4vw 0;
+}
+#event section article .ContentsWrap .videoBox {
+  width: 100%;
+  height: 20.8vw;
+}
+#event section article .ContentsWrap .videoBox video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#event section article .ContentsWrap h2 {
+  width: 100%;
+  height: auto;
+  font: bold 2.5vw/1 "Phudu";
+  letter-spacing: 2px;
+  text-align: center;
+  color: #e4e6e9;
+  margin: 3vw 0 0.5vw 0;
+}
+#event section article .ContentsWrap p {
+  width: 100%;
+  font: 1.2vw/1 "Phudu";
+  letter-spacing: -2px;
+  text-align: center;
+  color: #e4e6e9;
+}
+
+@media screen and (max-width: 450px) {
+  #event {
+    margin: 4vw auto 8vw;
+  }
+  #event .btns li {
+    height: 10vw;
+    text-align: center;
+  }
+  #event section article .ContentsWrap {
+    width: 100%;
+    padding: 1vw 15vw;
+  }
+  #event section article .ContentsWrap .videoBox {
+    height: 25vw;
+  }
+  #event section article .ContentsWrap h2 {
+    letter-spacing: 0px;
+    margin: 2vw 0 0.5vw 0;
+  }
+  #event section article .ContentsWrap p {
+    width: auto;
+    letter-spacing: -1px;
+  }
+}
+.sub_content {
+  max-width: 1900px;
+  min-width: 1240px;
+  padding: 100px 50px 150px;
+}
+.sub_content .content_box {
+  width: 100%;
+  height: 100%;
+}
+.sub_content .content_box h2 {
+  width: 100%;
+  font: 32px/48px "맑은 고딕";
+  padding: 50px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -2px;
+  border-bottom: 1px solid #ddd;
+}
+.sub_content .content_box .wrap {
+  max-width: 420px;
+  margin: 50px auto 0;
+}
+.sub_content .content_box .wrap #loginId,
+.sub_content .content_box .wrap #loginPwd {
+  display: block;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  padding: 0 15px;
+  line-height: 50px;
+  font-size: 14px;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 10px;
+  outline: none;
+}
+.sub_content .content_box .wrap #loginId.on::placeholder,
+.sub_content .content_box .wrap #loginPwd.on::placeholder {
+  color: red;
+}
+.sub_content .content_box .wrap button {
+  width: 100%;
+  height: 50px;
+  background-color: #000;
+  color: #fff;
+  font: bold 14px/50px "맑은 고딕";
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.sub_content .content_box .wrap .id_check {
+  padding: 20px 0;
+}
+.sub_content .content_box .wrap .id_check div .form_element {
+  display: flex;
+  vertical-align: middle;
+}
+.sub_content .content_box .wrap .id_check div .form_element #saveId {
+  min-width: 20px;
+  min-height: 20px;
+}
+.sub_content .content_box .wrap .id_check div .form_element .check_s {
+  min-width: 20px;
+  min-height: 20px;
+  padding-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.sub_content .content_box .wrap .id_check div::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.sub_content .content_box .wrap .id_check div .form_right {
+  margin-top: -22px;
+  float: right;
+  height: 20px;
+}
+.sub_content .content_box .wrap .id_check div .form_right a {
+  height: 20px;
+  font: 12px/20px "맑은 고딕";
+  color: #aaa;
+  letter-spacing: -1px;
+}
+.sub_content .content_box .wrap .id_check div .form_right a:first-child::after {
+  content: "/";
+  display: inline-block;
+  margin: 0 1px 0 5px;
+}
+.sub_content .content_box .wrap .id_check div .member_sns_login {
+  width: 100%;
+  height: 50px;
+  margin-top: 20px;
+  background-color: #fae100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub_content .content_box .wrap .id_check div .member_sns_login img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+  margin-right: 5px;
+}
+.sub_content .content_box .wrap .id_check div .member_sns_login a {
+  font: 16px/1 "맑은 고딕";
+}
+.sub_content .content_box .wrap .logIn_footer {
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub_content .content_box .wrap .logIn_footer li {
+  width: 49%;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sub_content .content_box .wrap .logIn_footer li:first-child {
+  border-right: 1px solid #ddd;
+}
+.sub_content .content_box .wrap .logIn_footer li a {
+  font: 14px/1 "맑은 고딕";
+}
+
+@media screen and (max-width: 450px) {
+  .sub_content {
+    max-width: 90vw;
+    min-width: 60vw;
+    padding: 5vh 5vw 8vh;
+    margin: 0 auto;
+  }
+  .sub_content .content_box {
+    width: 100%;
+    height: 100%;
+  }
+  .sub_content .content_box h2 {
+    font: 8vw/48px "맑은 고딕";
+    padding: 3vh;
+  }
+  .sub_content .content_box .wrap {
+    margin: 5vh auto 0;
+  }
+}
+footer {
+  width: 100vw;
+  height: 450px;
+  background-color: #111;
+  bottom: 0;
+  overflow: hidden;
+}
+footer .inner {
+  width: 90vw;
+  height: 100%;
+  margin: 0 auto;
+  padding: 40px 0px;
+}
+footer .inner .footer_body {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .inner .footer_body .footer_body_ul {
+  width: 70vw;
+  display: flex;
+}
+footer .inner .footer_body .footer_body_ul ul {
+  padding: 0 6px;
+}
+footer .inner .footer_body .footer_body_ul ul:first-child li a {
+  font: 14px/1 "arial";
+  color: #fff;
+}
+footer .inner .footer_body .footer_body_ul ul:nth-of-type(2) li:first-child, footer .inner .footer_body .footer_body_ul ul:nth-of-type(3) li:first-child {
+  height: 24px;
+}
+footer .inner .footer_body .footer_body_ul ul:nth-of-type(2) li:first-child a, footer .inner .footer_body .footer_body_ul ul:nth-of-type(3) li:first-child a {
+  font: 14px/1 "arial";
+  color: #fff;
+}
+footer .inner .footer_body .footer_body_ul ul li {
+  margin-bottom: 3px;
+  width: 245.25px;
+  height: 25px;
+}
+footer .inner .footer_body .footer_body_ul ul li a {
+  color: #aaa;
+  font: bold 12px/1 "arial";
+}
+footer .inner .footer_body .footer_body_ul ul li a:hover {
+  color: #fff;
+}
+footer .inner .footer_body .footer_body_social ul {
+  display: flex;
+}
+footer .inner .footer_body .footer_body_social ul li {
+  margin-left: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #aaa;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+footer .inner .footer_body .footer_body_social ul li a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .inner .footer_body .footer_body_social ul li a i {
+  font-size: 18px;
+  color: #222;
+}
+footer .inner .footer_body .footer_body_social ul li:hover {
+  background-color: #fff;
+}
+footer .inner .footer_body .footer_body_social ul li:hover a i {
+  color: #000;
+}
+footer .inner .footer_bottom {
+  width: 90vw;
+  height: 40%;
+  bottom: 0;
+}
+footer .inner .footer_bottom .part1 {
+  width: 90vw;
+  height: 20%;
+  display: flex;
+  justify-content: space-between;
+}
+footer .inner .footer_bottom .part1 .part1_left {
+  display: flex;
+}
+footer .inner .footer_bottom .part1 .part1_left i {
+  font-size: 14px;
+  color: #fff;
+}
+footer .inner .footer_bottom .part1 .part1_left span {
+  color: #fff;
+  font-size: 10px/1 "맑은 고딕";
+  letter-spacing: -1px;
+  margin: 0 8px;
+}
+footer .inner .footer_bottom .part1 .part1_left p {
+  color: #aaa;
+  font-size: 10px/1 "arial";
+  letter-spacing: -0.5px;
+  margin: 0 8px;
+}
+footer .inner .footer_bottom .part1 .part1_right {
+  display: flex;
+}
+footer .inner .footer_bottom .part1 .part1_right li {
+  margin-left: 20px;
+}
+footer .inner .footer_bottom .part1 .part1_right li a {
+  font: bold 12px/1 "맑은 고딕";
+  color: #aaa;
+  letter-spacing: -1px;
+}
+footer .inner .footer_bottom .part1 .part1_right li:nth-of-type(2) a {
+  color: #fff;
+}
+footer .inner .footer_bottom .part2 {
+  width: 100%;
+  height: 70%;
+  border-top: 2px solid #aaa;
+  padding-top: 20px;
+}
+footer .inner .footer_bottom .part2::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+footer .inner .footer_bottom .part2 a, footer .inner .footer_bottom .part2 span {
+  font: 12px/1.4 "맑은 고딕";
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+footer .inner .footer_bottom .part2 p {
+  font: 12px/1.4 "맑은 고딕";
+  letter-spacing: -1px;
+  color: #aaa;
+  padding: 0 10px 0 10px;
+  height: 50%;
+}
+footer .inner .footer_bottom .part2 .legal_section {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+}
+footer .inner .footer_bottom .part2 .legal_section p:first-child a {
+  position: absolute;
+  top: 30%;
+  right: 15px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #aaa;
+  padding: 0 3px;
+  cursor: pointer;
+}
+footer .inner .footer_bottom .part2 .legal_section p:first-child a:hover {
+  background-color: #fff;
+  color: #111;
+}
+footer .inner .footer_bottom .part2 .legal_section p:last-child {
+  padding: 30px 10px 0 10px;
+}
+footer .inner .footer_bottom .part2 .payment_information {
+  width: 50%;
+  float: left;
+}
+footer .inner .footer_bottom .part2 .payment_information::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+footer .inner .footer_bottom .part2 .payment_information a {
+  float: right;
+  margin: 5px 0 0 10px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #aaa;
+  padding: 0 3px;
+  cursor: pointer;
+}
+footer .inner .footer_bottom .part2 .payment_information a:hover {
+  background-color: #fff;
+  color: #111;
+}
+footer .inner .footer_bottom .part2 .legal_moreView {
+  width: 50%;
+  padding-top: 30px;
+  float: left;
+}
+footer .inner .footer_bottom .part2 .legal_moreView p {
+  font: 12px/1.4 "맑은 고딕";
+}
+footer .inner .footer_bottom .part2 .legal_moreView p a {
+  margin-left: 10px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #aaa;
+  padding: 0 3px;
+  cursor: pointer;
+}
+footer .inner .footer_bottom .part2 .legal_moreView p a:hover {
+  background-color: #fff;
+  color: #111;
+}
+
+@media screen and (max-width: 450px) {
+  footer {
+    height: 150px;
+    background-color: #eee;
+    position: relative;
+  }
+  footer .inner {
+    width: 90vw;
+    padding: 20px 5px;
+  }
+  footer .inner .footer_body {
+    height: 20%;
+  }
+  footer .inner .footer_body .footer_body_ul {
+    display: none;
+  }
+  footer .inner .footer_body .footer_body_social {
+    position: absolute;
+    top: 5vw;
+    right: 10vw;
+  }
+  footer .inner .footer_bottom {
+    width: 90vw;
+    position: absolute;
+    bottom: 1vw;
+  }
+  footer .inner .footer_bottom .part1 {
+    width: 100%;
+    margin: 0 auto;
+    height: 20%;
+    display: block;
+  }
+  footer .inner .footer_bottom .part1 .part1_left {
+    display: flex;
+    width: 100%;
+  }
+  footer .inner .footer_bottom .part1 .part1_left i {
+    font-size: 3vw;
+    color: #333;
+  }
+  footer .inner .footer_bottom .part1 .part1_left span {
+    color: #333;
+    font: 3vw/1 "맑은 고딕";
+    letter-spacing: -1px;
+    margin: 0 0 0 5px;
+  }
+  footer .inner .footer_bottom .part1 .part1_left p {
+    color: #555;
+    font: 3vw/1 "arial";
+    letter-spacing: -0.5px;
+    margin: 0 8px;
+  }
+  footer .inner .footer_bottom .part1 .part1_right {
+    display: flex;
+  }
+  footer .inner .footer_bottom .part1 .part1_right li {
+    margin-left: 0px;
+    margin-right: 10px;
+  }
+  footer .inner .footer_bottom .part1 .part1_right li a {
+    font: bold 2vw/1 "맑은 고딕";
+    color: #555;
+    letter-spacing: -1px;
+  }
+  footer .inner .footer_bottom .part1 .part1_right li:nth-of-type(2) a {
+    color: #333;
+  }
+  footer .inner .footer_bottom .part2 {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

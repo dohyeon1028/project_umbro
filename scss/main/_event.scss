@@ -1,0 +1,126 @@
+#event{
+   width: 80vw;
+   margin: 1vw auto 8vw;
+   h1{
+      display: block;
+      font: bold 3vw/15vh "Phudu";
+      width: 100%;
+      height: 15vh;
+      text-align: center;
+   }
+   .btns{
+      width: 100%;
+      display: flex;
+      li{
+         width: calc(80vw / 4);
+         height: 3vw;
+         border: 1px solid #000;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         font: 1.2vw/1 "Phudu";
+         cursor: pointer;
+         &:hover{
+            background-color: #aaa;
+            color: #000;
+         }
+         &.on{
+            background-color: #000;
+            color: #fff;
+         }
+      }
+   }
+   section{
+      margin-top: 2vh;
+      article{
+         width: 100%;
+         height: 38.88vw;
+         padding: 1vw 1vw;
+         display: none;
+         border : 1px solid #000;
+         position: relative;
+         &.on{
+            display: block;
+         }
+         .bgImgBox{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #333;
+            img{
+               position: absolute;
+               opacity: 0.15;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+            }
+         }
+         .ContentsWrap{
+            width: 50%;
+            height: 100%;
+            padding: 4vw 1vw 4vw 0;
+            .videoBox{
+               width: 100%;
+               height: 20.8vw;
+               video{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+            }
+            h2{
+               width: 100%;
+               height: auto;
+               font: bold 2.5vw/1 "Phudu";
+               letter-spacing: 2px;
+               text-align: center;
+               color: #e4e6e9;
+               margin : 3vw 0 0.5vw 0;
+            }
+            p{
+               width: 100%;
+               font: 1.2vw/1 "Phudu";
+               letter-spacing: -2px;
+               text-align: center;
+               color: #e4e6e9;
+            }
+         }
+         
+      }
+   }
+}
+
+@media screen and (max-width : 450px) {
+   #event{
+      margin: 4vw auto 8vw;
+      .btns{
+         li{
+            height: 10vw;
+            text-align: center;
+         }
+      }
+      section{
+         article{
+            .ContentsWrap{
+               width: 100%;
+               padding: 1vw 15vw;
+               .videoBox{
+                  height: 25vw;
+               }
+               h2{
+                  letter-spacing: 0px;
+                  margin : 2vw 0 0.5vw 0;
+               }
+               p{
+                  width: auto;
+                  letter-spacing: -1px;
+               }
+            }
+            
+         }
+      }
+   }
+}

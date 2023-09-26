@@ -1,0 +1,157 @@
+.sub_content{
+    max-width: 1900px;
+    min-width: 1240px;
+    padding: 100px 50px 150px;
+    .content_box{
+        width: 100%;
+        height: 100%;
+        h2{
+            width: 100%;
+            font: 32px/48px "맑은 고딕";
+            padding: 50px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: -2px;
+            border-bottom: 1px solid #ddd;
+        }
+        .wrap{
+            max-width: 420px;
+            margin: 50px auto 0;
+            #loginId,
+            #loginPwd{
+                display: block;
+                width: 100%;
+                height: 50px;
+                border: 0;
+                border-bottom: 1px solid #ddd;
+                padding: 0 15px;
+                line-height: 50px;
+                font-size: 14px;
+                color: #000;
+                font-weight: 400;
+                margin-bottom: 10px;
+                outline: none;
+                &.on{
+                    &::placeholder{
+                        color: red;
+                    }
+                }
+            }
+            button{
+                width: 100%;
+                height: 50px;
+                background-color: #000;
+                color: #fff;
+                font: bold 14px/50px "맑은 고딕";
+                font-weight: 400;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            .id_check{ 
+                padding: 20px 0;
+                div{
+                    .form_element{
+                        display: flex;
+                        vertical-align: middle;
+                        #saveId{
+                            min-width: 20px;
+                            min-height: 20px;
+                        }
+                        .check_s{
+                            min-width: 20px;
+                            min-height: 20px;
+                            padding-left: 10px;
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        display: block;
+                        clear: both;
+                    }
+                    .form_right{
+                        margin-top: -22px;
+                        float: right;
+                        height: 20px;
+                        a{
+                            height: 20px;
+                            font: 12px/20px "맑은 고딕";
+                            color: #aaa;
+                            letter-spacing: -1px;
+                            &:first-child{
+                                &::after{
+                                    content: '/';
+                                    display: inline-block;
+                                    margin: 0 1px 0 5px;
+                                }
+                            }
+                        }
+                    }
+                    .member_sns_login{
+                        width: 100%;
+                        height: 50px;
+                        margin-top: 20px;
+                        background-color: #fae100;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        img{
+                            width: 20px;
+                            height: 20px;
+                            object-fit: cover;
+                            margin-right: 5px;
+                        }
+                        a{
+                            font: 16px/1 "맑은 고딕";
+                        }
+                    }
+                }
+            }
+
+            .logIn_footer{
+                width: 100%;
+                height: 60px;
+                border-top: 1px solid #ddd;
+                border-bottom: 1px solid #ddd;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                li{
+                    width: 49%;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    &:first-child{
+                        border-right: 1px solid #ddd;
+                    }
+                    a{
+                        font: 14px/1 "맑은 고딕";
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 450px) {
+    .sub_content{
+        max-width: 90vw;
+        min-width: 60vw;
+        padding: 5vh 5vw 8vh;
+        margin: 0 auto;
+        .content_box{
+            width: 100%;
+            height: 100%;
+            h2{
+                font: 8vw/48px "맑은 고딕";
+                padding: 3vh;
+            }
+            .wrap{
+                margin: 5vh auto 0;
+            }
+        }
+    }
+    
+}

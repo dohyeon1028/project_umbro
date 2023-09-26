@@ -1,0 +1,118 @@
+.NEW_prod_wrap{
+   width: 100vw;
+   height: auto;
+   min-height: 100%;
+   padding-bottom: 450px;
+   padding: 4vh 2vw 4vh;
+   margin: 0 auto;
+   display: flex;
+   @import "../common/filter_wrap";
+   .list_control_wrap{
+      width: 88vw;
+      h2{
+         font: bold 2vw/7vh "Phudu";
+         height: 7vh;
+         letter-spacing: 1px;
+         span{
+            color: #aaa;
+         }
+      }
+      section{
+         width: 100%;   
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         article{
+            width: 21vw;
+            height: 38.4vw;
+            .imgBox{
+               width: 100%;
+               height: 28.5vw;
+               background-color: #e4e6e9;
+               overflow: hidden;
+               position: relative;
+               img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: contain;
+                  position: absolute;
+                  transition: 0.5s;
+                  &.before{
+                     opacity: 1;
+                  }
+                  &.after{
+                     opacity: 0;
+                  }
+               } 
+            }
+            figcaption{
+               padding: 13px 15px 0;
+               position: relative;
+               a{
+                  font: 14px/1 "Phudu";
+                  color: #999;
+               }
+               p{
+                  font: bold 14px/1 "Phudu";
+                  margin-top: 10px;
+               }
+            }
+         }
+      }
+   }
+}
+
+
+
+@media screen and (max-width : 450px) {
+   .NEW_prod_wrap{
+      padding-bottom: 100px;
+      padding: 2vw 3vh;
+      .list_control_wrap{
+         width: 100%;
+         h2{
+            font: bold 5vw/10vh "Phudu";
+            text-align: center;
+            height: 10vh;
+            margin-bottom: 3vh;
+         }
+         section{
+            width: 100%;
+            article{
+               width: calc(100% / 3 - 10px);   
+               height: calc(100vw / 3 + 15vh);
+               .imgBox{
+                  width: 100%;
+                  height: calc(100vw / 3 - 10px);
+                  img{
+                     &.before{
+                        opacity: 1;
+                     }
+                     &.after{
+                        opacity: 0;
+                     }
+                  } 
+               }
+               figcaption{
+                  padding: 0.5vh 0.5vw 0;
+                  height: 12vh;
+                  position: relative;
+                  a{
+                     height: 8vw;
+                     position: absolute;
+                     top: 1vh;
+                     font-size: 0.6em;
+                     color: #999;
+                  }
+                  p{
+                     font: bold 1.2vw/1 "Phudu";
+                     position: absolute;
+                     bottom: 0vw;
+                     right: 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

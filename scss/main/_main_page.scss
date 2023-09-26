@@ -1,0 +1,469 @@
+#frame{
+    position: relative;
+    width: 100vw;
+    height: calc(100vw / (16 / 9));
+    overflow: hidden;
+    margin-bottom: 10vh;
+    .panel{
+        height: 100%;
+        position: absolute;
+        display: flex;
+        left: -100vw;
+        cursor: pointer;
+        li{
+            width: 100vw;
+            height: 100%;
+           img{
+            width: 100%;
+            height: 100%;
+           } 
+        }
+    }
+    
+}
+
+#banner{
+    width: 80vw;
+    margin: 0 auto;
+    cursor: pointer;
+    .imgBox{
+        width: 100%;
+        height: 6.5vw;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .item_wrap{
+        width: 100%;
+        display: flex;
+        .videoBox{
+            width: 49.3vw;
+            height: 30vw;
+            video{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .imgBox{
+            width: 30.7vw;
+            height: 30vw;
+            overflow: hidden;
+            position: relative;
+            .banner_slide{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                transition: 0.5s;
+                li{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                    img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    }
+                }
+            }
+            
+            .btns{
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 10px;
+                li{
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background-color: #fff;
+                    border: 0.5px solid #999;
+                    &.on{
+                        background-color: #000;
+                        border: none;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+#recommend{
+    width: 80vw;
+    height: 25.7vw;
+    margin: 8vh auto 5vh;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        top: 1vw;
+        left: 0;
+        width: 80vw;
+        height: 2px;
+        background-color: #000;
+        z-index: -1;
+    }
+
+    h1{
+        display: block;
+        width: 40vw;
+        height: 2vw;
+        margin: 0 auto ;
+        background-color: #fff;
+        font: bold 1.6vw/1 "Phudu";
+        letter-spacing: 1px;
+        text-align: center;
+    }
+    .items_wrap{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 6vw;
+        overflow: hidden;
+        li{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            &:nth-of-type(1){
+                position: absolute;
+                left: -110vw;
+            }
+            &:nth-of-type(2){
+                position: absolute;
+                left: 0vw;
+            }
+            &:nth-of-type(3){
+                position: absolute;
+                left: 110vw;
+            }
+            article{
+                width: calc((80vw / 5) - 2vw);
+                height: 22vw;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: calc((80vw / 5) - 2vw);
+                    object-fit: cover;
+                }
+                &:hover{
+                    .txt{
+                        p{
+                            opacity: 1; 
+                            transform: translateY(0px);
+                        }
+                    }
+                }
+                .txt{
+                    width: 100%;
+                    height: 4vw;
+                    padding: 0 5px;
+                    p{
+                        width: 100%;
+                        opacity: 0;
+                        transform: translateY(-25px);
+                        transition: 0.5s;
+                        &.brand{
+                            font: 1.2vw/1 "Phudu";
+                            color: #999;
+                            margin-top: 1vh;
+                        }
+                        &.prod_title{
+                            font: 1vw/1 "Phudu";
+                            color: #999;
+                            margin-top: 1.0vh;
+                        }
+                        &.prod_price{
+                            font: bold 1.1vw/1 "Phudu";
+                            color: #000;
+                            margin-top: 0.5vh;
+                        }
+                    }
+                }
+                    
+            }
+        }
+    }
+    .prev{
+        position: absolute;
+        top: 12vw;
+        i{
+            font-size: 2vw;
+        }
+        left: -2vw;
+    }
+    .next{
+        position: absolute;
+        top: 12vw;
+        i{
+            font-size: 2vw;
+        }
+        right: -2vw;
+    }
+}
+
+#full_banner{
+    width: 100%;
+    overflow: hidden;
+    section{
+        width: 80vw;
+        height: 50vw;
+        margin: 0 auto;
+        position: relative;
+        transition: 0.5s;
+        overflow: hidden;
+        .imgBox{
+            width: 100%;
+            height: 33.3vw;
+            margin-bottom: 3vh;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+        .txtBox{
+            margin: 0 auto;
+            >h1{
+                font: bold 3vw/1 "Phudu";
+                text-align: center;
+                letter-spacing: 1px;
+                margin-bottom: 1vw;
+            }
+            h2{
+                font: 1.5vw/1 "Phudu";
+                text-align: center;
+                letter-spacing: -2px;
+                color: #222;
+                margin-bottom: 2vw;
+            }
+        }
+        a{
+            margin: 0 auto;
+            width: 13vw;
+            height: 3vw;
+            padding: 0 9px;
+            background-color: #fff;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font: 1vw/1 "맑은 고딕";
+            letter-spacing: -1px;
+            color: #000;
+            &:hover{
+                background-color: #000;
+                border: 1px solid #fff;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width : 450px) {
+    
+    body{-ms-overflow-style:none; }
+    body::-webkit-scrollbar { display:none; }
+    
+    #frame{
+        margin-bottom: 2vh;
+    }
+    #banner{
+        width: 100%;
+        background-color: #eee;
+        padding: 10px 0;
+        .imgBox{
+            height: 9vw;
+        }
+        .item_wrap{
+            display: block;
+            .videoBox{
+                width: 90vw;
+                height: 60vw;
+                margin: 20px auto;
+            }
+            .imgBox{
+                width: 90vw;
+                height: 20vw;
+                margin: 0 auto;
+                overflow: visible;
+                position: static;
+                .banner_slide{
+                    position: static;
+                    display: flex;
+                    justify-content: space-between;
+                    li{
+                    position: static;
+                    width: 24%;
+                    }
+                }
+                .btns{
+                    display: none;
+                }
+            }
+            
+        }
+    }
+    
+    #recommend{
+        width: 90vw;
+        height: 48vw;
+        margin: 80px auto 30px;
+        position: relative;
+        overflow: hidden;
+        &::before{
+            width: 90vw;
+            top: 5px;
+        }
+        h1{
+            width: fit-content;
+            padding: 0 10px;
+            margin: 0 auto 10px;
+            font: bold 3.5vw/1 "Phudu";
+        }
+        .items_wrap{
+            width: calc(25% * 15);
+            position: static;
+            top: 50px;
+            overflow: hidden; //
+            &::after{
+                content: '';
+                display: block;
+                clear: both;
+            }
+            li{
+                width: calc(90vw / 4);
+                padding: 2vw 1vw;
+                display: block;
+                float: left;
+                img{
+                    width: 100%;
+                    height: 90%;
+                    object-fit: cover;
+                }
+                .txt{
+                    width: 100%;
+                    height: 12vw;
+                    padding: 0 0px;
+                    position: relative;
+                    p{
+                        width: 100%;
+                        opacity: 1;
+                        transform: translateY(0px);
+                        &.brand{
+                            font: 1vw/1 "Phudu";
+                            color: #777;
+                            margin-top: 1vw;
+                        }
+                        &.prod_title{
+                            width: 125%;
+                            font: 1vw/1 "Nanum Gothic";
+                            color: #999;
+                            margin-top: 1vw;
+                            transform-origin: top left;
+                            transform: scale(0.8);
+                        }
+                        &.prod_price{
+                            font: bold 1.2vw/1 "Phudu";
+                            color: #000;
+                            position: absolute;
+                            bottom: -1vw;
+                            text-align: right;
+                        }
+                    }
+                }
+                &:nth-of-type(1){
+                    position: static;
+                    left: unset;
+                }
+                &:nth-of-type(2){
+                    position: static;
+                    left: unset;
+                }
+                &:nth-of-type(3){
+                    position: static;
+                    left: unset;
+                }
+            }
+        }
+        .prev{
+            top: 48%;
+            i{
+                font-size: 30px;
+                color: rgba($color: #000000, $alpha: 0.7);
+            }
+            width: 18.75px;
+            height: 30px;
+            left: -20px;
+        }
+        .next{
+            top: 48%;
+            i{
+                font-size: 30px;
+                color: rgba($color: #000000, $alpha: 0.7);
+            }
+            width: 18.75px;
+            height: 30px;
+            right: -20px;
+        }
+    }
+    
+    #full_banner{
+        width: 90vw;
+        margin: 2vh auto ;
+        position: relative;
+        >h1{
+            display: block;
+            width: fit-content;
+            background-color: #fff;
+            font: bold 30px/1 "Phudu";
+            text-align: center;
+            margin: 20px auto 60px;
+            padding: 0 20px;
+            &::before{
+                content: '';
+                display: block;
+                width: 90vw;
+                height: 2px;
+                position: absolute;
+                top: 36px;
+                z-index: -1;
+                left: 0;
+                background-color: #000;
+            }
+        }
+        section{
+            padding: 0 10px;
+            width: 45vw;
+            height: 37vw;
+            margin: 0 0 30px 0;
+            float: left;
+            overflow: initial;
+            .imgBox{
+                height: 19vw;
+                margin-bottom: 10px;
+            }
+            .txtBox{
+                h1{
+                    font: bold 3vw/1 "Phudu";
+                    margin-bottom: 8px;
+                    padding: 0 1vw;
+                }
+                h2{
+                    font: 2vw/1.2 "Phudu";
+                    letter-spacing: -1px;
+                }
+            }
+            a{
+                display: none;
+            }
+        }
+    }
+}

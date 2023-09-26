@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://kit.fontawesome.com/c12878d3ba.js" crossorigin="anonymous"></script>
+    <script defer src="../script/beforeunload.js"></script>
+    <script defer src="../script/header.js"></script>
+    <script defer src="../script/logIn.js"></script>
+</head>
+<body>
+    <!-- header -->
+    <div class="headerBox"></div>
+    <header>
+            <h1>
+                <a href="../index.html"><img src="../img/logo.jpg"></a>
+                
+            </h1>
+            <ul id="gnb">
+                <li>
+                    <a href="#;">SHOP</a>
+                </li>
+                <li>
+                    <a href="NewArrival.html">NEW</a>
+                </li>
+                <li>
+                    <a href="WeeklyBest.html">BEST</a>
+                </li>
+                <li>
+                    <a href="Football.html">FOOTBALL</a>
+                </li>
+                <li>
+                    <a href="event.html">EVENT</a>
+                </li>
+            </ul>
+            <ul class="util">
+                <li>
+                    <a href="logIn.html">로그인</a>/<a href="#">회원가입</a>
+                </li>
+                <li><a href="logIn.html">마이페이지</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+    </header>
+    <aside class="mobile_aside">
+        <div class="inner">
+            <div class="close">
+                <i class="fa-solid fa-x"></i>
+            </div>
+            <ul id="gnb">
+                <li>
+                    <a href="../index.html">SHOP</a>
+                </li>
+                <li>
+                    <a href="NewArrival.html">NEW</a>
+                </li>
+                <li>
+                    <a href="WeeklyBest.html">BEST</a>
+                </li>
+                <li>
+                    <a href="Football.html">FOOTBALL</a>
+                </li>
+                <li>
+                    <a href="event.html">EVENT</a>
+                </li>
+            </ul>
+            <ul class="util">
+                <li>
+                    <a href="logIn.html">로그인</a>/<a href="#">회원가입</a>
+                </li>
+                <li><a href="logIn.html">마이페이지</a></li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <!-- header --> 
+
+    <div class="sub_content">
+        <div class="content_box">
+            <h2>로그인</h2>
+            <div class="wrap">
+                <form id="formLogin" action="index.html" method="post">
+                    <input type="text" id="loginId" placeholder="아이디">
+                    <input type="password" id="loginPwd" placeholder="비밀번호">
+                    <button type="submit" id="submit">로그인</button>
+                    
+                    <div class="id_check">
+                        <div>
+                            <span class="form_element">
+                                <input type="checkbox" name="saveId" id="saveId" value="y" checked>
+                                <label for="saveId" class="check_s">아이디 저장</label>
+                            </span>
+                            <span class="form_right">
+                                <a href="#;">아이디</a>
+                                <a href="#;">비밀번호 찾기</a>
+                            </span>
+                            <div class="member_sns_login">
+                                <img src="../img/logIn/kakao.png" alt="kakaotalk 로고">
+                                <a href="#;">카카오톡 1초 로그인/회원가입</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="logIn_footer">
+                        <li><a href="#;">회원가입</a></li>
+                        <li><a href="#">비회원 주문조회</a></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="inner">
+            <div class="footer_body">
+                <div class="footer_body_ul">
+                    <ul>
+                        <li><a href="#;">새로운 소식</a></li>
+                        <li><a href="#;">멤버 가입</a></li>
+                        <li><a href="#;">매장 안내</a></li>
+                        <li><a href="#;">나이키 저널</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#;">도움말</a></li>
+                        <li><a href="#;">로그인 안내</a></li>
+                        <li><a href="#;">주문배송조회</a></li>
+                        <li><a href="#;">반품 정책</a></li>
+                        <li><a href="#;">결제 방법</a></li>
+                        <li><a href="#;">공지사항</a></li>
+                        <li><a href="#;">문의하기</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#;">ABOUT NIKE</a></li>
+                        <li><a href="#;">소식</a></li>
+                        <li><a href="#;">채용</a></li>
+                        <li><a href="#;">투자자</a></li>
+                        <li><a href="#;">지속가능성</a></li>
+                    </ul>
+                </div>
+                <div class="footer_body_social">
+                    <ul>
+                        <li><a href="#;"><i class="fa-brands fa-twitter"></i></a></li>
+                        <li><a href="#;"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#;"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="#;"><i class="fa-brands fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="part1">
+                    <div class="part1_left">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>대한민국</span>
+                        <p>© 2023 Nike, Inc. All Rights Reserved</p>
+                    </div>
+                    <ul class="part1_right">
+                        <li><a href="#;">이용약관</a></li>
+                        <li><a href="#;">개인정보처리방침</a></li>
+                        <li><a href="#;">위치 기반 서비스 약관</a></li>
+                        <li><a href="#;">영상정보처리기기 운영 방침</a></li>
+                    </ul>
+                </div>
+                <div class="part2">
+                    <div class="legal_section">
+                        <p>(유)나이키코리아 대표 Kimberlee Lynn Chang Mendes, 킴벌리 린 창 멘데스 | 서울 강남구 테헤란로 152 강남파이낸스센터 30층 | 통신판매업신고번호 2011-서울강남-03461 | 등록번호 220-88-09068 <a href="#;">사업자 정보 확인</a></p>
+                        <p>고객센터 전화 문의 <a href="#;">080-022-0182</a> FAX 02-6744-5880 | 이메일 <a href="#;">service@nike.co.kr</a> | 호스팅서비스사업자 (유)나이키코리아</p>
+                    </div>
+                    <div class="payment_information">
+                        <p>현금 등으로 결제 시 안전 거래를 위해 나이키 쇼핑몰에서 가입하신 한국결제네트웍스 유한회사의 구매안전 서비스(<span>결제대금예치</span>)를 이용하실 수 있습니다. <a href="#;">결제대금예치</a></p>
+                    </div>
+                    <div class="legal_moreView">
+                        <p>콘텐츠산업진흥법에 의한 콘텐츠 보호 안내 <a href="#;">자세히 보기</a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
